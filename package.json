@@ -24,7 +24,6 @@
     "gulp-concat": "~2.1.7",
     "gulp-rename": "~0.2.1",
     "gulp-util": "~2.2.9",
-    "gulp-wrap-umd": "*",
     "gulp-less": "~1.2.3",
     "gulp-clean": "~0.3.0"
   }

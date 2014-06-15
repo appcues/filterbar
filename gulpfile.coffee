@@ -7,15 +7,13 @@ header = require('gulp-header')
 rename = require('gulp-rename')
 gutil = require('gulp-util')
 clean = require('gulp-clean')
-wrap = require('gulp-wrap-umd')
 
 
 pkg = require('./package.json')
 banner = "/*! #{ pkg.name } #{ pkg.version } */\n"
 filename = pkg.main
 minFilename = filename.replace('.js', '.min.js')
-AMDFilename = filename.replace('.js', '-amd.js')
-minAMDFilename = filename.replace('.js', '-amd.min.js')
+
 
 gulp.task 'coffee', ->
     try
@@ -32,27 +30,11 @@ gulp.task 'concat', ->
         .pipe(header(banner))
         .pipe(gulp.dest('./'))
 
-    gulp.src(src)
-        .pipe(concat(AMDFilename))
-        .pipe(header(banner))
-        .pipe(gulp.dest('./'))
-        .pipe(wrap({
-            namespace: pkg.name
-            exports: pkg.name
-        }))
-        .pipe(gulp.dest('./'))
-
 gulp.task 'uglify', ->
     gulp.src(pkg.main)
         .pipe(uglify())
         .pipe(header(banner))
         .pipe(rename(minFilename))
-        .pipe(gulp.dest('./'))
-
-    gulp.src(AMDFilename)
-        .pipe(uglify())
-        .pipe(header(banner))
-        .pipe(rename(minAMDFilename))
         .pipe(gulp.dest('./'))
 
 gulp.task 'js', ->
