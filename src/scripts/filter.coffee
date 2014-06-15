@@ -3,14 +3,11 @@ define [
 ], (Backbone) ->
 
     ###*
-     * State manager for individuals filters.
+     * Individual filter.
     ###
-    class Filterbar extends Backbone.View
+    class Filter extends Backbone.View
         constructor: (options) ->
             @options = options
 
         render: ->
         remove: ->
-
-        addFilter: (filter) ->
-        removeFilter: (filter) ->

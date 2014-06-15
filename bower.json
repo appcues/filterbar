@@ -1,0 +1,22 @@
+{
+  "name": "filterbar",
+  "main": "filterbar.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/appcues/filterbar",
+  "authors": [
+    "Jonathan Kim <me@jonathan-kim.com>"
+  ],
+  "description": "A handy, event-driven UI element for filtering information.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "underscore": "~1.6.0"
+  }
+}
