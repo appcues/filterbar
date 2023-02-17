@@ -25,6 +25,6 @@
     "gulp-rename": "~0.2.1",
     "gulp-util": "~2.2.9",
     "gulp-less": "~1.2.3",
-    "gulp-clean": "~0.3.0"
+    "gulp-clean": "~0.4.0"
   }
 }
